@@ -1,0 +1,86 @@
+#h1{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+#p1{
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.omnibar{
+  margin-top: 50px;
+  margin-bottom: 10px
+}
+
+
+
+#svg {
+    display: block;
+    margin: auto;
+    height: 120px;
+    width: 120px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.custom-file-input {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid rgb(78, 232, 202); /* Add a border to the button */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Optional: Add a smooth transition effect */
+  }
+  
+  .custom-file-input input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Adjust the font size as needed */
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+  /* Optional: Add styles to the button to match your preferred styling */
+  #infoIcon {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(78, 232, 202);
+    border: 1px solid rgb(78, 232, 202); /* Add a border to the button */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* border: 1px solid;
+    border-color: rgb(78, 232, 202); */
+    border-radius: 5px;
+  }
+  
+  /* Optional: Add hover effect for better user experience */
+  #infoIcon:hover {
+    background-color: rgb(78, 232, 202);
+  }
+
+  #urlSearchInput{
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 800px;
+  }
+  
+  #searchUrlButton{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(78, 232, 202);
+    border: 1px solid rgb(78, 232, 202); /* Add a border to the button */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  #searchUrlButton:hover{
+    background-color: rgb(78, 232, 202);
+  }

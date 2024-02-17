@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>URL and website scanner - FraudShield.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="urlscan.io - Website scanner for suspicious and malicious URLs" />
+    <meta name="keywords" content="url,website,web,scanner,analyze,analyzer" />
+    <meta name="author" content="urlscan.io">
+
+    <meta name="theme-color" content="#2c3e50">
+
+    <link rel="alternate" type="application/rss+xml" title="Blog - urlscan.io" href="https://urlscan.io/blog/feed.xml">
+
+    <link rel="preconnect" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="//www.google.com">
+    <link rel="preconnect" href="//www.gstatic.com">
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preload" href="/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" as="font" crossorigin>
+
+    <link rel="icon" type="image/png" href="/img/urlscan_256.png" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/static/css/sc-btn.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/static/css/urlscan.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/static/css/flag-icon.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <script>
+      function displayFileName(input) {
+        var fileNameDisplay = document.getElementById('fileNameDisplay');
+        if (fileNameDisplay) {
+          fileNameDisplay.textContent = input.files[0] ? input.files[0].name : '';
+        }
+      }
+    </script>
+
+    <script>
+      // Assume there's an element with the ID 'analysisResult' where you want to display the results.
+const resultContainer = document.getElementById('analysisResult');
+
+// Replace 'ANALYSIS_ID' with the actual analysis ID obtained from the previous step.
+const analysisId = 'ANALYSIS_ID';
+
+fetch(`/get_analysis/${analysisId}`)
+    .then(response => response.json())
+    .then(data => {
+        // Update the DOM with the analysis data.
+        resultContainer.innerText = JSON.stringify(data);
+    })
+    .catch(error => console.error('Error fetching analysis results:', error));
+
+    </script>
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+            <a class="navbar-brand navbar-brand-img hidden-sm hidden-xs" href="/"><img src="/img/urlscan_256.png" class="height100pxmargintop15px" alt="urlscan.io logo"></a>
+            <a class="navbar-brand navbar-brand-img visible-sm visible-xs paddingleft5pxpaddingright5px" href="/"><img src="/img/urlscan_256.png" class="height50pxmargintop15pxpadding0px0px0px0px" alt="urlscan.io logo"></a>
+          
+          <a class="navbar-brand hidden-sm hidden-xs" href="/">
+            <span class="header">FraudShield.<span class="text-success">io</span></span>
+          </a>
+          <a class="navbar-brand visible-sm visible-xs paddingleft2pxpaddingright2px" href="/">
+            <span class="header">FraudShield.<span class="text-success">io</span></span>
+          </a>
+          <div class="sectr visible-xs main-nav pull-right sectr-small">
+          
+          <a href="https://securitytrails.com/corp/urlscan?utm_source=urlscan&utm_medium=button&utm_campaign=header" target="_blank" rel="noopener">
+            <img src="/img/securitytrails-rf.png" alt="SecurityTrails logo">
+          </a>
+          
+          </div>
+
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav collapse navbar-collapse bordertop0px">
+
+            <li class="visible-lg index active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li class="search "><a href="/search/"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+            <li class="live "><a href="/live/"><span class="glyphicon glyphicon-fire"></span> Live</a></li>
+            <li class="automatic "><a href="/docs/api/"><span class="glyphicon glyphicon-qrcode"></span> API</a></li>
+            <li class="blog "><a href="/blog/"><span class="glyphicon glyphicon-flash"></span> Blog</a></li>
+            <li class="about "><a href="/docs/"><span class="glyphicon glyphicon-bookmark"></span> Docs</a></li>
+            <li class="about ">
+              <a href="/pricing/"><span class="glyphicon glyphicon-new-window"></span> Pricing</a>
+            </li>
+
+            <li class="automatic ">
+              <a href="/user/login/" class="loggedout"><span class="glyphicon glyphicon-user"></span> Login</a>
+              <a href="/user/" class="loggedin displaynone"><span class="glyphicon glyphicon-user green"></span> <i><span id="username"></span></i></a>
+            </li>
+            
+            
+          </ul>
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="main">
+
+      
+
+      <div class="main content">
+
+
+
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+
+<div class="row">
+  <div class="col col-md-10 col-md-offset-1">
+    <div class="text-center marginbottom20px">
+      <h1 id="h1" class=" hidden-xs hidden-sm indexname">FraudShield.<span class="text-success">io</span></h1>
+        <i class="hidden-sm hidden-xs">A sandbox for the web</i>
+    </div>
+    <p id="p1" class="about col-8 m-auto text-center d-none d-md-block"> Analyse suspicious files, domains, IPs and URLs to detect malware and other breaches, automatically share them with the security community. </p>
+  </div> 
+</div>
+
+<div> 
+  <div class="omnibar"> 
+    <div class="tabs-wrapper hstack position-relative"> 
+      <!--?lit$6927989814$--> 
+      <ul class="nav nav-tabs nav-justified w-100 bg-body-secondary" role="tablist"> <!--?lit$6927989814$--><!----> 
+        <li class="nav-item"> 
+          <a role="button" data-route="upload" class="py-4 nav-link  active  home-search-tab" href="/templates/index.html" id="File-tab"> <!--?lit$6927989814$-->File </a> 
+        </li> <!----><!----> 
+        <li class="nav-item"> 
+          <a role="button" data-route="url" class="py-4 nav-link    home-search-tab" href="/templates/url.html" id="URL-tab"> <!--?lit$6927989814$-->URL </a> 
+        </li> <!----><!----> 
+        <li class="nav-item"> 
+          <a role="button" data-route="search" class="py-4 nav-link    home-search-tab" href="/templates/messages.html" id="Search-tab"> <!--?lit$6927989814$-->Search </a> 
+        </li> <!----> 
+      </ul>  
+      
+    </div> <!--?lit$6927989814$--> 
+    <div class="section-wrapper p-5"> <!--?lit$6927989814$--> 
+      <div data-route="upload"> 
+        <vt-ui-main-upload-form id="uploadForm"></vt-ui-main-upload-form> 
+        <div class="vstack gap-4 align-items-center"> <!--?lit$971228765$-->
+          <svg id="svg" xmlns="http://www.w3.org/2000/svg" height="80" fill="currentColor" viewBox="0 0 256 170">
+            <g>
+              <path style="fill: var(--bs-body-color)" d="M71 8h80.9v29.1c0 2.2 1.8 4 4 4h30V47h8v-9.1c0-1.6-.6-3.1-1.7-4.2L161.1 1.8C160 .6 158.4 0 156.8 0H68c-2.8 0-5 2.2-5 5v42h8V8Zm88.9 4 20.5 21h-20.5V12Z"></path>
+              <path style="fill: var(--bs-tertiary-color)" fill-rule="evenodd" d="M185.9 161.9H71V59h-8v105.9c0 2.8 2.2 5 5 5h120.9c2.8 0 5-2.2 5-5V59h-8v102.9ZM103 63.3c.7.8 2 .9 2.8.2 1.8-1.6 4.6-3.2 8-4.5h-8.7c-.7.5-1.3 1-1.9 1.5-.9.7-.9 2-.2 2.8Zm49.5.1c.8-.8.7-2.1-.1-2.8l-1.8-1.5h-7.7c2.4 1.1 4.7 2.6 6.8 4.5.7.6 2 .6 2.8-.2Zm-41.1 51.7c-2.6-6.1-3.7-12.8-1.1-18.8 2.9-6.7 8.6-9.6 14.3-10.4 2.9-.4 5.7-.3 8.1.1 2.4.4 4.3 1.1 5.2 1.7 4.7 3.1 9.5 7.7 8.6 16.1-.1 1.1.7 2.1 1.8 2.2 1.1.1 2.1-.7 2.2-1.8 1.1-10.6-5.1-16.5-10.4-19.9-1.6-1-4-1.8-6.7-2.3-2.8-.5-6-.6-9.3-.1-6.7 1-13.8 4.5-17.4 12.8-3.2 7.4-1.7 15.4 1.1 21.9 2.8 6.6 7 12.2 9.8 15.2.7.8 2 .9 2.8.1.8-.7.9-2 .1-2.8-2.6-2.7-6.5-7.9-9.1-14ZM128 71.5c4.4-.1 11.3 1.2 17.5 4.9 6.3 3.8 12 10.2 13.9 20.3 1.2 6.1.7 10.7-1.2 13.9-1.9 3.2-5.1 4.6-8.3 4.6-3.2 0-6.5-1.3-9.1-3.3-2.6-2.1-4.7-5-5.3-8.5-.8-4.7-4.7-7.4-8.6-7.3-2 0-3.8.7-5.2 2.1-1.5 1.4-2.6 3.6-2.8 7-.4 6.6 3.6 12.4 8.7 16.8 2.5 2.1 5.1 3.9 7.4 5.1 2.3 1.2 4 1.8 4.6 1.9 1.1.1 1.8 1.1 1.7 2.2-.1 1.1-1.1 1.8-2.2 1.7-1.3-.2-3.6-1.1-6-2.4-2.4-1.3-5.4-3.2-8.1-5.6-5.5-4.7-10.7-11.7-10.1-20.1.2-4.1 1.7-7.3 3.9-9.5s5.1-3.3 7.9-3.3c5.6-.1 11.4 3.8 12.6 10.6.4 2.3 1.9 4.4 3.9 6 2 1.6 4.5 2.5 6.6 2.5 2.1 0 3.8-.8 4.9-2.7 1.2-2 1.8-5.5.7-11.1-1.7-8.7-6.6-14.2-12.1-17.5-5.6-3.4-11.7-4.5-15.4-4.4h-.1c-5.3-.2-17.6 2.1-24.3 12.1-3.2 5-4.3 11.2-4.2 17.2.1 6 1.4 11.5 2.5 14.6.4 1-.2 2.1-1.2 2.5-1 .4-2.1-.2-2.5-1.2-1.2-3.5-2.6-9.4-2.7-15.8-.1-6.4 1-13.5 4.9-19.4C108 73.8 122 71.3 128 71.5Zm5.8 42.5c3.1 3.6 8.7 6.6 18.6 6 1.1-.1 2 .8 2.1 2 0 1.1-.8 2-1.9 2.1-10.9.6-17.8-2.7-21.9-7.4-4-4.7-5-10.4-4.7-14.3 0-1.1 1-2 2.1-1.9 1.1 0 2 1 1.9 2.1-.2 3.1.6 7.7 3.8 11.4ZM95.2 83.5c-.5 1-1.8 1.3-2.7.7-1-.6-1.3-1.8-.7-2.7 4-6.5 17-19 38.2-19 18 0 30.5 12.6 34.7 18.9.6.9.3 2.2-.6 2.8-.9.6-2.2.3-2.8-.6-3.8-5.7-15.2-17.1-31.3-17.1-19.6 0-31.4 11.5-34.8 17Z" clip-rule="evenodd"></path>
+              <path style="fill: var(--bs-primary)" d="M185.9 47H0v12h256V47h-70.1Z"></path>
+            </g>
+          </svg>
+          <form action="/upload" method="post" enctype="multipart/form-data" class="vstack gap-4 align-items-center">
+            <label for="file" class="custom-file-input btn btn-outline-primary px-5" id="infoIcon" data-tooltip-text="Max size 650MB">
+              Choose file
+              <input type="file" name="file" id="file" onchange="displayFileName(this)" style="display: none;" />
+              <input type="submit" value="Upload">
+            </label>
+            <div class="w-80 m-auto p-4">
+              <vt-ui-tos-consent type="file"></vt-ui-tos-consent>
+            </div>
+            <p id="fileNameDisplay"></p>
+          </form>
+          
+          
+          
+        </div>
+      </div>  
+    </div>   
+  </div> 
+</div>
+
+
+<!-- <div class="text-center csp">
+  <hr class="medium"/>
+  <h4 class="text-muted">Thanks to our corporate sponsors</h4>
+  <p class="bottom10">
+
+  <a href="/securitytrails/" title="SecurityTrails - A Recorded Future Company" class="securitytrails sponsor">
+    <img src="/img/securitytrails.png" alt="SecurityTrails Logo" class="securitytrails-logo">
+  </a>
+
+  <a href="https://tines.io/blog/tines-urlscan-automation/?utm_source=urlscan&utm_medium=sponsorship&utm_campaign=urlscan" title="Tines - Tell your automation story" class="tines sponsor">
+    <img src="/img/tines_logo.png" alt="Tines Logo" class="tines-logo">
+  </a>
+
+  <a href="https://www.joesecurity.org/?utm_source=urlscan&utm_medium=sponsorship&utm_campaign=urlscan" title="Automated Malware Analysis - Joe Sandbox" class="joesecurity sponsor">
+    <img src="/img/joesecurity.svg" alt="Joe Security Logo" class="joesecurity-logo">
+  </a>
+
+  <a href="https://cyble.com/?utm_source=urlscan&utm_medium=sponsorship&utm_campaign=urlscan" title="Cyble - Cybersecurity Threat Intelligence Platform &amp; Solutions" class="cyble sponsor">
+    <img src="/img/cyble.png" alt="Cyble Logo" class="joesecurity-logo">
+  </a>
+
+  </p>
+
+  <p class="top20">
+
+  <a href="https://tria.ge/?utm_source=urlscan&utm_medium=sponsor&utm_campaign=2020" title="Hatching Triage | Sandbox for High-Volume Automated Malware Analysis" class="hatching sponsor">
+    <img src="/img/hatching.svg" alt="Hatching Logo" class="hatching-logo">
+  </a>
+
+  <a href="https://www.ctm360.com/?utm_campaign=urlscan&utm_source=urlscan" title="CTM360 | Cyber Threat Management | Digital Risk Protection" class="ctm360 sponsor">
+    <img src="/img/ctm360.png" alt="CTM360 Logo" class="ctm360-logo">
+  </a>
+
+  <a href="https://www.miltonsecurity.com/?utm_campaign=urlscan&utm_source=urlscan" title="Milton Security" class="miltonsecurity sponsor">
+    <img src="/img/miltonsecurity.png" alt="Milton Security Logo" class="ctm360-logo">
+  </a>
+
+  <a href="https://pentest-tools.com/?utm_source=urlscanio&utm_medium=link&utm_campaign=spons&utm_term=oct2023" title="Milton Security" class="pentesttools sponsor">
+    <img src="/img/pentesttools.svg" alt="Pentest Tools" class="pentesttools-logo">
+  </a>
+
+  </p>
+
+</div> -->
+
+
+
+<footer class="footer navbar-default"><div class="container"><div class="row"><div class="col-sm-3 col-xs-6"><div class="text-left"><p><span class="hidden-xs">Copyright</span> <br/>Version: <span id="version" class="text-muted"></span></p><p class="hidden-xs"><a href="https://twitter.com/urlscanio" class="sc-btn sc--twitter sc--tiny sc--flat"><span class="sc-icon"><svg viewBox="0 0 33 33" width="25" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 32,6.076c-1.177,0.522-2.443,0.875-3.771,1.034c 1.355-0.813, 2.396-2.099, 2.887-3.632 c-1.269,0.752-2.674,1.299-4.169,1.593c-1.198-1.276-2.904-2.073-4.792-2.073c-3.626,0-6.565,2.939-6.565,6.565 c0,0.515, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86c-0.565,0.97-0.889,2.097-0.889,3.301 c0,2.278, 1.159,4.287, 2.921,5.465c-1.076-0.034-2.088-0.329-2.974-0.821c-0.001,0.027-0.001,0.055-0.001,0.083 c0,3.181, 2.263,5.834, 5.266,6.438c-0.551,0.15-1.131,0.23-1.73,0.23c-0.423,0-0.834-0.041-1.235-0.118 c 0.836,2.608, 3.26,4.506, 6.133,4.559c-2.247,1.761-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.031-1.566-0.092 c 2.905,1.863, 6.356,2.95, 10.064,2.95c 12.076,0, 18.679-10.004, 18.679-18.68c0-0.285-0.006-0.568-0.019-0.849 C 30.007,8.548, 31.12,7.392, 32,6.076z"></path></g></svg> </span><span class="sc-text">Follow @urlscanio</span></a></p></div></div><div class="col-xs-6 text-center hidden-xs"><h4 class="bottom5 none"><span class="label label-success halfgray" id="stats-running" title="Scans running">0</span> <span class="label label-warning halfgray" id="stats-queued" title="Scans queued">0</span></h4><h4><span class="label label-success" id="stats-public" title="Public scans over the past 24h">0</span> <span class="label label-info" id="stats-unlisted" title="Unlisted scans over the past 24h">0</span> <span class="label label-warning" id="stats-private" title="Private scans over the past 24h">0</span></h4><div class="text-muted text-center hidden-xs">Page generated on 2024-02-02 12:44:12</div></div><div class="col-sm-3 col-xs-6"><ul class="pull-right left10 hidden-xs hidden-sm"><li><a href="/about/" class="bold">About Us</a></li><li><a href="/security/" class="">Security</a></li><li><a href="https://www.subscribepage.com/urlscanio" class="" target="_blank" rel="noopener">Newsletter</a></li><li><a href="/sitemap/">Sitemap</a></li></ul><ul class="pull-right"><li><a href="https://status.urlscan.io" class="bold" target="_blank" rel="noopener">Status Page</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/impressum/">Impressum / Legal</a></li></ul></div></div></div></footer><script defer="defer" src="/js/935.6ffb44e4247c191833df.js"></script><script defer="defer" src="/js/755.9aca47e7127750eefd55.js"></script><script defer="defer" src="/js/875.2cbe62c6f5fc9d20cd21.js"></script><script defer="defer" src="/js/206.0ced6b44294d7c337f71.js"></script><script defer="defer" src="/js/246.73acb5c3173b4acb3712.js"></script><script defer="defer" src="/js/910.4f5324f74bc607cd17b2.js"></script><script defer="defer" src="/js/710.52aef988d6415d6e3e3b.js"></script><script defer="defer" src="/js/index.d0b650d301fb82b4989b.js"></script><script defer="defer" src="/js/915.5072e263a4318e766a94.js"></script><script defer="defer" src="/js/app.6ffd4a5ef2cea171db4f.js"></script>
